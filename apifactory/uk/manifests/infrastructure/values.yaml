@@ -5,8 +5,8 @@
 kl-base-terraform:
   fullnameOverride: workspace-apifactory-uk
   module:
-    source: git@github.com:KL-Engineering/subscriptions-terraform-module.git
-    version: v0.1.0
+    source: git@github.com:KL-Engineering/products-core-terraform-module.git
+    version: main
   provider_config:
     aws_region: eu-west-2
   outputs:

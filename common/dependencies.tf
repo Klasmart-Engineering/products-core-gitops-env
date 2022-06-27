@@ -5,17 +5,17 @@ data "tfe_outputs" "cluster-infra-tools" {
   workspace    = "cluster-infra-tools-prod"
 }
 
-data "tfe_outputs" "api-factory-cluster" {
+data "tfe_outputs" "cluster-api-factory" {
   organization = local.terraform_organization
   workspace    = "cluster-uk-apifactory"
 }
 
-data "tfe_outputs" "api-factory-account" {
+data "tfe_outputs" "account-api-factory" {
   organization = local.terraform_organization
   workspace    = "account-uk-apifactory"
 }
 
-data "tfe_outputs" "meta" {
+data "tfe_outputs" "meta-api-factory" {
   organization = local.terraform_organization
   workspace    = "meta-uk-apifactory"
 }
