@@ -1,0 +1,31 @@
+# Default values for workspace.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+kl-base-terraform:
+  fullnameOverride: workspace-apifactory-uk
+  module:
+    source: git@github.com:KL-Engineering/subscriptions-terraform-module.git
+    version: v0.1.0
+  provider_config:
+    aws_region: eu-west-2
+  outputs:
+    - key: db_output_secret
+      moduleOutputName: db_output_secret
+  variables:
+    - key: project_environment
+      value: apifactory
+      sensitive: false
+      environmentVariable: false
+    - key: project_region
+      value: uk
+      sensitive: false
+      environmentVariable: false
+    - key: service_owner
+      value: infrastructure
+      sensitive: false
+      environmentVariable: false
+    - key: project
+      value: products-core
+      sensitive: false
+      environmentVariable: false
