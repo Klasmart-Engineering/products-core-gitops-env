@@ -36,9 +36,10 @@ locals {
   }
 
   argocd_helm_repositories = {
-    terraform-base-helm = {
-      repo = "https://raw.githubusercontent.com/KL-Engineering/terraform-base-helm/main"
-    }
+    # Already exists
+    # terraform-base-helm = {
+    #   repo = "https://raw.githubusercontent.com/KL-Engineering/terraform-base-helm/main"
+    # }
   }
 
   argocd_project_whitelisted_repos = [
