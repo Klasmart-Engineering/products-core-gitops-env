@@ -1,10 +1,10 @@
 locals {
   terraform_organization = "kidsloop-infrastructure"
 
-  dep_tools                        = nonsensitive(data.tfe_outputs.cluster-infra-tools.values)
-  dep_apifactory_account           = nonsensitive(data.tfe_outputs.account-api-factory.values)
-  dep_apifactory_cluster           = nonsensitive(data.tfe_outputs.cluster-api-factory.values)
-  dep_apifactory_meta              = nonsensitive(data.tfe_outputs.meta-api-factory.values)
+  dep_tools              = nonsensitive(data.tfe_outputs.cluster-infra-tools.values)
+  dep_apifactory_account = nonsensitive(data.tfe_outputs.account-api-factory.values)
+  dep_apifactory_cluster = nonsensitive(data.tfe_outputs.cluster-api-factory.values)
+  dep_apifactory_meta    = nonsensitive(data.tfe_outputs.meta-api-factory.values)
 
 
   # Infra tools EKS variables (for ArgoCD / Teleport)
@@ -21,7 +21,7 @@ locals {
   # Used by workspaces module
   environments = {
     apifactory = {
-      url                     = data.tfe_outputs.api-factory-cluster.cluster_endpoint
+      url                     = local.dep_apifactory_cluster.cluster_endpoint
       region                  = local.dep_apifactory_meta.region
       project_environment     = local.dep_apifactory_meta.project_environment
       project_region          = local.dep_apifactory_meta.project_region
