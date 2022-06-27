@@ -15,7 +15,7 @@ locals {
   kubeconfig_certificate_authority_data = local.dep_cluster.kubeconfig_certificate_authority_data
 
   # Infra tools EKS variables (for ArgoCD / Teleport)
-  tools_region                                = local.dep_meta.region
+  tools_region                                = "eu-west-2"
   tools_cluster_endpoint                      = local.dep_tools.cluster_endpoint
   tools_cluster_id                            = local.dep_tools.cluster_id
   tools_kubeconfig_certificate_authority_data = local.dep_tools.kubeconfig_certificate_authority_data
@@ -28,7 +28,7 @@ locals {
   container_registry_credentials = jsonencode({
     auths = {
       "ghcr.io" = {
-        "auth" = base64encode(var.ghcr_credentials)
+        "auth" = base64encode("bot:${var.github_repo_access_token}")
       }
     }
   })

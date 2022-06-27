@@ -3,7 +3,7 @@ variable "tools_cluster_tfc_sa_token" {
   type        = string
 }
 
-variable "ghcr_credentials" {
+variable "github_repo_access_token" {
   description = "Registry credentials for k8s to pull application images"
   type        = string
 }
