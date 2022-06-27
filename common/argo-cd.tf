@@ -17,16 +17,6 @@ resource "argocd_project" "project" {
       }
     }
 
-    # Allows access to the istio-system namespace
-    # Required to allow tls certificates to be created under the istio-system namespace
-    dynamic "destination" {
-      for_each = local.environments
-      content {
-        namespace = local.istio_namespace
-        server    = destination.value["url"]
-      }
-    }
-
     cluster_resource_whitelist {
       group = "*"
       kind  = "*"
