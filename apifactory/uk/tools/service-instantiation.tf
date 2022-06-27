@@ -1,6 +1,6 @@
 module "service_instance" {
   # Module import info here
-  source = "git@github.com:KL-Engineering/products-tools-terraform-svc.git?ref=v0.8.0"
+  source = "git@github.com:KL-Engineering/products-tools-terraform-svc.git?ref=v0.9.0"
 
   # Passthrough inputs
   region              = local.dep_meta.region
@@ -18,6 +18,7 @@ module "service_instance" {
   aws_target_role_arn    = local.dep_meta.aws_target_role_arn
   aws_session_name       = local.dep_meta.aws_session_name
   aws_target_external_id = local.dep_meta.aws_target_external_id
+  create_terraform_operator_egress = false
 
   # Kubernetes
   kubernetes_server_url          = local.cluster_endpoint
