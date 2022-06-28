@@ -6,7 +6,7 @@ kl-base-terraform:
   fullnameOverride: core-products-apifactory-uk
   module:
     source: git@github.com:KL-Engineering/products-core-terraform-module.git
-    version: v0.1.1
+    version: v0.1.2
   provider_config:
     aws_region: eu-west-2
   outputs:
