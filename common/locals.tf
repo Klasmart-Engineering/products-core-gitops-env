@@ -17,7 +17,6 @@ locals {
 
   product_namespace = "products-core"
 
-  # TODO(INFRAENG-243): Pull these values from other workspace outputs
   # Used by workspaces module
   environments = {
     apifactory = {
@@ -36,10 +35,9 @@ locals {
   }
 
   argocd_helm_repositories = {
-    # Already exists
-    # terraform-base-helm = {
-    #   repo = "https://raw.githubusercontent.com/KL-Engineering/terraform-base-helm/main"
-    # }
+    core-terraform-base-helm = {
+      repo = "https://raw.githubusercontent.com/KL-Engineering/terraform-base-helm/main"
+    }
   }
 
   argocd_project_whitelisted_repos = [

@@ -3,10 +3,10 @@
 # Declare variables to be passed into your templates.
 
 kl-base-terraform:
-  fullnameOverride: workspace-apifactory-uk
+  fullnameOverride: core-products-apifactory-uk
   module:
     source: git@github.com:KL-Engineering/products-core-terraform-module.git
-    version: main
+    version: v0.1.0
   provider_config:
     aws_region: eu-west-2
   outputs:
@@ -27,5 +27,25 @@ kl-base-terraform:
       environmentVariable: false
     - key: project
       value: products-core
+      sensitive: false
+      environmentVariable: false
+    - key: monitoring_interval
+      value: "0"
+      sensitive: false
+      environmentVariable: false
+    - key: db_name
+      value: products_db
+      sensitive: false
+      environmentVariable: false
+    - key: db_service
+      value: products
+      sensitive: false
+      environmentVariable: false
+    - key: enhanced_monitoring_role_enabled
+      value: "false"
+      sensitive: false
+      environmentVariable: false
+    - key: deletion_protection
+      value: "false"
       sensitive: false
       environmentVariable: false
